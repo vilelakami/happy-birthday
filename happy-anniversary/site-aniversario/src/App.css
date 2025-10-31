@@ -1,0 +1,135 @@
+/* Container Principal */
+.glitch-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* caixa do texto */
+.content {
+  position: relative; 
+  z-index: 10;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace; 
+  padding: 30px;
+  border-radius: 5px;
+}
+/* texto */
+.countdown-text { 
+  font-size: 3rem;
+  color: white; 
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  text-shadow: 0 0 20px #000;
+}
+.aniversario-message { 
+  font-size: 3rem;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  animation: pulse-glitch 1s infinite alternate
+ }
+ 
+/* efeito de pulsação */
+@keyframes pulse-glitch {
+    0% {
+        transform: scale(1); 
+        font-size: 3rem; 
+        text-shadow: 
+            0 0 10px #FF0000,
+            0 0 20px #FF0000;
+    }
+    20% {
+        transform: scale(1.02);
+        font-size: 3.1rem; 
+        text-shadow: 
+            0 0 12px #FFA500,
+            0 0 25px #FFA500;
+    }
+    40% {
+        transform: scale(1.04);
+        font-size: 3.15rem; 
+        text-shadow: 
+            0 0 15px #FFFF00,
+            0 0 30px #FFFF00;
+    }
+    60% {
+        transform: scale(1.05);
+        font-size: 3.2rem; 
+        text-shadow: 
+            0 0 20px #00FF00,
+            0 0 40px #00FF00;
+    }
+    80% {
+        transform: scale(1.04);
+        font-size: 3.15rem; 
+        text-shadow: 
+            0 0 25px #0000FF, 
+            0 0 50px #0000FF;
+    }
+    100% {
+        transform: scale(1); 
+        font-size: 3rem; 
+        text-shadow: 
+            0 0 30px #8A2BE2, 
+            0 0 60px #8A2BE2;
+    }
+}
+/* media query pra responsividade */
+@media (max-width: 600px) {
+    
+    .content {
+        padding: 15px; 
+        width: 90%;
+    }
+
+    .countdown-text {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+    
+    .countdown-value {
+        font-size: 1em;
+        margin: 0 2px;
+    }
+
+    .aniversario-message {
+        font-size: 1.5rem;
+    }
+    
+    @keyframes pulse-glitch {
+        0% {
+            transform: scale(1); 
+            font-size: 1.5rem;
+            text-shadow: 0 0 5px #FF0000;
+        }
+        20% {
+            transform: scale(1.02);
+            font-size: 1.55rem; 
+            text-shadow: 0 0 10px #FFA500;
+        }
+        40% {
+            transform: scale(1.03);
+            font-size: 1.6rem; 
+            text-shadow: 0 0 15px #FFFF00;
+        }
+        60% {
+            transform: scale(1.04);
+            font-size: 1.65rem; 
+            text-shadow: 0 0 20px #00FF00;
+        }
+        80% {
+            transform: scale(1.03);
+            font-size: 1.6rem; 
+            text-shadow: 0 0 25px #0000FF;
+        }
+        100% {
+            transform: scale(1);
+            font-size: 1.5rem; 
+            text-shadow: 0 0 30px #8A2BE2;
+        }
+    }
+}

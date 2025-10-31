@@ -1,0 +1,57 @@
+/* Container Principal do Glitch (preenche a tela) */
+.letter-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0d0d0d;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px; /* Tamanho da célula */
+    line-height: 1;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0.8;
+}
+
+/* Estilo de cada caractere */
+.letter-glitch span {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    /* Animação para dar a impressão de piscar aleatório */
+    animation: random-flicker 0.1s infinite alternate;
+}
+
+/*Animação para suavizar o glitch */
+.letter-glitch.smooth-glitch span {
+    transition: color 0.1s ease-out;
+    animation: none;
+}
+
+/* Efeitos de Vinheta (Vignette) para escurecer bordas/centro */
+.letter-glitch.outer-vignette::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+    pointer-events: none;
+}
+.letter-glitch.center-vignette::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+}
+
+@keyframes random-flicker {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.8; }
+}
