@@ -52,12 +52,9 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (isBirthdayToday()) {
         // Usa o TextType (digitação) para a mensagem
         return (
-            <TextType 
-                text="FELIZ ANIVERSÁRIO MAMAE!" 
-                className="aniversario-message" 
-                typingSpeed={100} 
-                delay={500} 
-            />
+            <span className="aniversario-message">
+                FELIZ ANIVERSÁRIO MAMAE!
+            </span>
         );
     }
     
